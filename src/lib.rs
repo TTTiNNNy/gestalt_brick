@@ -39,7 +39,7 @@ impl <T: ?Sized> InterruptSplitter<T> {
 }
 
 impl <T>InterruptSplitter<T> {
-    pub fn call(&mut self) { unsafe {
+    pub fn call_all(&mut self) { unsafe {
             (*self.splitter_ouput_interrupt.unwrap()).iter().for_each( |&this| (*this).call());
         }
     }
